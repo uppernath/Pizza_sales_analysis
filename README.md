@@ -58,3 +58,32 @@ FROM
 ```
 
 ![Total Pizzas Sold](assets/Total%20Pizzas%20Sold.png)
+
+TOTAL ORDERS
+
+This query calculates the total number of orders by counting the distinct order IDs in the pizza_sales table.
+Tracking the total number of orders provides a fundamental measure of customer activity and engagement with the company's products or services. It is a key performance indicator for assessing sales volume and customer demand.
+
+```sql
+SELECT
+  count(DISTINCT order_id) AS Total_orders
+FROM
+  pizza_sales;
+```
+
+![Total Orders](assets/Total%20Orders.png)
+
+AVERAGE PIZZA PER ORDER
+
+This query calculates the average number of pizzas per order. It divides the total quantity of pizzas sold by the count of distinct order IDs. Understanding the average number of pizzas per order helps in assessing customer preferences and consumption patterns. It also aids in optimizing inventory levels and production planning to meet demand efficiently.
+
+```sql
+SELECT
+  CAST(CAST(sum(quantity) AS numeric (10, 2))/
+  count(DISTINCT order_id) AS numeric(10,2))
+  AS Avg_pizza_per_order
+FROM
+   pizza_sales;
+```
+
+![Average Pizza Per Order](assets/Average%20Pizza%20Per%20Order.png)
