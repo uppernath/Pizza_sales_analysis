@@ -165,11 +165,16 @@ strategies and product offerings.
 
 ```sql
 SELECT
-   pizza_caregory, sum(total_price) as Total_sales, sum(total_price) * 100/(SELECT sum(total_price) from pizza_sales) AS PCT
+  pizza_category,
+  sum(total_price) AS Total_sales,
+  sum(total_price) AS 100/(SELECT sum(total_price) from pizza_sales)
+  AS PCT
 FROM pizza_sales
 GROUP BY pizza_category
-ORDER BY DESC;
+ORDER BY PCT DESC;
 ```
+
+![Pizza Category by Percentage](assets/Pizza%20category%20percentage.png)
 
 **5. Percentage of Sales by Pizza Size**
 
@@ -193,3 +198,5 @@ FROM pizza_sales
 GROUP BY pizza_size
 ORDER BY pct DESC;
 ```
+
+![Pizza Category by Size](assets/Pizza%20Category%20by%20Size.png)
