@@ -200,3 +200,7 @@ ORDER BY pct DESC;
 ```
 
 ![Pizza Category by Size](assets/Pizza%20Category%20by%20Size.png)
+
+## Dashboard
+
+[Pizza Dashboard](assets/Pizza%20Dashboard.pdf)
